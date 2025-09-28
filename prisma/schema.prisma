@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "/app/generated/prisma-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("PRISMA_DATABASE_URL")
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  body      String?
+  category  String   @default("general")
+  status    String   @default("open") // open|planned|in-progress|done
+  votes     Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model Vote {
+  id           String   @id @default(cuid())
+  postId       String
+  fingerprint  String
+  createdAt    DateTime @default(now())
+
+  @@unique([postId, fingerprint])
+  @@index([postId])
+}
