@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inconsolata.variable} antialiased`}>{children}</body>
+      <body className={`${inconsolata.variable} antialiased font-sans`}>
+        {children}
+      </body>
     </html>
   );
 }
