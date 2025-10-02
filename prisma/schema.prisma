@@ -7,22 +7,22 @@ datasource db {
   url      = env("PRISMA_DATABASE_URL")
 }
 
-model Post {
-  id        String   @id @default(cuid())
-  title     String
-  body      String?
-  category  String   @default("general")
-  status    String   @default("open") // open|planned|in-progress|done
-  votes     Int      @default(0)
-  createdAt DateTime @default(now())
+model Feedback {
+  id            String   @id @default(cuid())
+  title         String
+  description   String?
+  category      String   @default("general")
+  status        String   @default("open") // open|planned|in-progress|done
+  votes         Int      @default(0)
+  createdAt     DateTime @default(now())
 }
 
 model Vote {
   id           String   @id @default(cuid())
-  postId       String
+  feedBackId       String
   fingerprint  String
   createdAt    DateTime @default(now())
 
-  @@unique([postId, fingerprint])
-  @@index([postId])
+  @@unique([feedBackId, fingerprint])
+  @@index([feedBackId])
 }
