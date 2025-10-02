@@ -16,7 +16,7 @@ export async function POST(req: Request) {
       });
     });
     return NextResponse.json({ ok: true });
-  } catch (e) {
+  } catch (_e) {
     return NextResponse.json(
       { ok: false, reason: "already_voted" },
       { status: 409 }
