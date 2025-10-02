@@ -5,7 +5,7 @@ import { useNotifications } from "@/components/ui/notification";
 type RequestOptions = {
   method?: (typeof METHOD)[keyof typeof METHOD];
   headers?: Record<string, string>;
-  body?: any;
+  body?: BodyInit;
   cookie?: string;
   params?: Record<string, string | number | boolean | undefined | null>;
   cache?: RequestCache;
@@ -102,13 +102,13 @@ const api = {
   get<T>(url: string, options?: RequestOptions): Promise<T> {
     return fetchApi<T>(url, { ...options, method: "GET" });
   },
-  post<T>(url: string, body?: any, options?: RequestOptions): Promise<T> {
+  post<T>(url: string, body?: BodyInit, options?: RequestOptions): Promise<T> {
     return fetchApi<T>(url, { ...options, method: "POST", body });
   },
-  put<T>(url: string, body?: any, options?: RequestOptions): Promise<T> {
+  put<T>(url: string, body?: BodyInit, options?: RequestOptions): Promise<T> {
     return fetchApi<T>(url, { ...options, method: "PUT", body });
   },
-  patch<T>(url: string, body?: any, options?: RequestOptions): Promise<T> {
+  patch<T>(url: string, body?: BodyInit, options?: RequestOptions): Promise<T> {
     return fetchApi<T>(url, { ...options, method: "PATCH", body });
   },
   delete<T>(url: string, options?: RequestOptions): Promise<T> {
