@@ -8,7 +8,9 @@ const createFeedback = ({
 }: {
   data: createFeedbackInput;
 }): Promise<typeof prisma.feedback> => {
-  return api.post("/feedback", data);
+  const parsedData = data ? JSON.stringify(data) : undefined;
+
+  return api.post("/feedback", parsedData);
 };
 
 export { createFeedback };
