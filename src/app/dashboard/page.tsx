@@ -1,7 +1,10 @@
 "use client";
 import React from "react";
-import CreateFeedbackForm from "./components/CreateFeedbackForm/CreateFeedbackForm";
 
 export default function DashboardPage() {
-  return <CreateFeedbackForm />;
+  return (
+    <div className="flex h-full align-middle justify-center items-center">
+      <h1 className="text-5xl font-bold">Dashboard</h1>
+    </div>
+  );
 }

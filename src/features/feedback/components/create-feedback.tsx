@@ -12,11 +12,11 @@ import {
   Textarea,
 } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
-
-import { zodResolver } from "@hookform/resolvers/zod";
-import { formShema } from "./formSchema";
 import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 import { Button } from "@/components/ui/button";
+import { formShema } from "@/features/feedback/utils/formSchema";
 
 export default function CreateFeedbackForm() {
   const form = useForm<z.infer<typeof formShema>>({
@@ -55,7 +55,7 @@ export default function CreateFeedbackForm() {
           name="description"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Title</FormLabel>
+              <FormLabel>Description</FormLabel>
               <FormControl>
                 <Textarea placeholder="Enter description" {...field} />
               </FormControl>
