@@ -16,28 +16,30 @@ function Header() {
   return (
     <header
       className={cn(
-        "bg-background z-10 w-3xs min-w-3xs max-w-3xs p-2 border-r h-full border-gray-500 flex flex-col gap-4 md:translate-0 max-md:absolute",
+        "bg-background z-10 w-3xs min-w-3xs max-w-3xs  border-r h-full border-primary flex flex-col  md:translate-0 max-md:absolute",
         isOpen ? "translate-0" : "-translate-x-full",
         "transition-transform duration-300"
       )}
     >
-      <h1 className="text-3xl font-bold">
-        <Anchor href="/dashboard">Feedback Board</Anchor>
-      </h1>
-      <ul>
-        <li className="mb-2">
-          <Anchor href="/" variant="disabled">
-            My Feedback
-          </Anchor>
-        </li>
-        <li className="mb-2">
-          <Anchor href="/" variant="disabled">
-            Users
-          </Anchor>
-        </li>
-      </ul>
-      <div className="border p-4 border-gray-500 background-gray-300">
-        <CreateFeedbackForm />
+      <div className="h-full overflow-y-auto gap-4 p-2 scrollbar">
+        <h1 className="text-3xl font-bold">
+          <Anchor href="/dashboard">Feedback Board</Anchor>
+        </h1>
+        <ul>
+          <li className="mb-2">
+            <Anchor href="/" variant="disabled">
+              My Feedback
+            </Anchor>
+          </li>
+          <li className="mb-2">
+            <Anchor href="/" variant="disabled">
+              Users
+            </Anchor>
+          </li>
+        </ul>
+        <div className="border p-4 border-primary background-gray-300">
+          <CreateFeedbackForm />
+        </div>
       </div>
       <Button
         onClick={toggleOpen}

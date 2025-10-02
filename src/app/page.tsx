@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="flex h-screen items-center bg-white">
+    <div className="flex h-screen items-center bg-white w-full">
       <div className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 lg:px-8 lg:py-16 flex justify-center flex-col items-center gap-2">
         <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           <span className="block">Feedback Board</span>

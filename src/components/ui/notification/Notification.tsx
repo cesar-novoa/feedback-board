@@ -33,7 +33,7 @@ export type NotificationProps = {
 const variants = cva("border gap-4 flex w-auto p4, bg-background", {
   variants: {
     variant: {
-      info: "border-gray-500",
+      info: "border-primary",
       warning: "border-warning text-warning",
       success: "border-success text-success",
       error: "border-destructive text-destructive",

@@ -125,3 +125,25 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: .1rem;
+    height: 1rem;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: none;
+    background: var(--background)
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: none;
+  }
+
+  .scrollbar {
+    scrollbar-color: var(--primary);
+    scrollbar-width: .25rem;
+  }
+}

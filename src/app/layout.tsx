@@ -35,7 +35,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${inconsolata.variable} antialiased font-sans h-full flex`}
+        className={`${inconsolata.variable} antialiased font-sans h-full flex scrollbar`}
       >
         <AppProvider>
           <HydrationBoundary state={dehydratedState}>
