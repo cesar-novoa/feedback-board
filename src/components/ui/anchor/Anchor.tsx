@@ -1,6 +1,6 @@
 import React from "react";
 import { cva } from "class-variance-authority";
-import Link, { LinkProps } from "next/link";
+import Link from "next/link";
 import { AnchorProps } from "./Ancor.types";
 import { cn } from "@/utils/utils";
 

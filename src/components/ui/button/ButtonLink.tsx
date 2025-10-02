@@ -1,4 +1,4 @@
-import Link, { LinkProps } from "next/link";
+import Link from "next/link";
 import { Button } from "./Button";
 import { ButtonLinkProps } from "./ButtonLink.types";
 
