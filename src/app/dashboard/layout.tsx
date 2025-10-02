@@ -10,7 +10,7 @@ function DashboardLayout({ children }: { children: ReactNode }) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Header />
-      <div className="h-full dashboard">{children}</div>
+      <div className="h-full grow dashboard">{children}</div>
     </Suspense>
   );
 }

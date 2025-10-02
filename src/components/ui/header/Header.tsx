@@ -16,7 +16,7 @@ function Header() {
   return (
     <header
       className={cn(
-        "bg-background z-10 w-3xs min-w-3xs max-w-3xs p-2 border-r h-full border-gray-500 flex flex-col gap-4 absolute",
+        "bg-background z-10 w-3xs min-w-3xs max-w-3xs p-2 border-r h-full border-gray-500 flex flex-col gap-4 md:translate-0 max-md:absolute",
         isOpen ? "translate-0" : "-translate-x-full",
         "transition-transform duration-300"
       )}
@@ -41,7 +41,7 @@ function Header() {
       </div>
       <Button
         onClick={toggleOpen}
-        className="mt-auto absolute bottom-0 right-0 translate-x-full border-b-0"
+        className="md:hidden mt-auto absolute bottom-0 right-0 translate-x-full border-b-0"
         variant={"outline"}
       >
         menu
