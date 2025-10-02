@@ -19,7 +19,7 @@ model Feedback {
 
 model Vote {
   id           String   @id @default(cuid())
-  feedBackId       String
+  feedbackId       String
   fingerprint  String
   createdAt    DateTime @default(now())
 
