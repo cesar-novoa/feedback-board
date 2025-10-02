@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const formShema = z.object({
+const createFeedbackSchema = z.object({
   title: z
     .string()
     .min(3, { message: "Title must be at least 3 characters." })
@@ -11,4 +11,6 @@ const formShema = z.object({
     .max(500, { message: "Description must be at most 500 characters." }),
 });
 
-export { formShema };
+type createFeedbackInput = z.infer<typeof createFeedbackSchema>;
+
+export { createFeedbackSchema, type createFeedbackInput };

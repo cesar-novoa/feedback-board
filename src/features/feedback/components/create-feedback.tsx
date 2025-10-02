@@ -16,19 +16,21 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Button } from "@/components/ui/button";
-import { formShema } from "@/features/feedback/utils/formSchema";
+import { createFeedbackSchema } from "@/features/feedback/utils/create-feedback-schema";
+import { useNotifications } from "@/components/ui/notification/notifications-store";
+import { createFeedback } from "@/features/feedback/api/create-feedback";
 
 export default function CreateFeedbackForm() {
-  const form = useForm<z.infer<typeof formShema>>({
-    resolver: zodResolver(formShema),
+  const form = useForm<z.infer<typeof createFeedbackSchema>>({
+    resolver: zodResolver(createFeedbackSchema),
     defaultValues: {
       title: "",
       description: "",
     },
   });
 
-  function onSubmit(data: z.infer<typeof formShema>) {
-    console.log(data);
+  function onSubmit(data: z.infer<typeof createFeedbackSchema>) {
+    createFeedback({ data });
   }
 
   return (
