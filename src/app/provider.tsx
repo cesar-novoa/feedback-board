@@ -3,6 +3,7 @@ import React from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { queryConfig } from "@/lib/react-query";
+import { Notifications } from "@/components/ui/notification";
 
 type AppProviderProps = {
   children: React.ReactNode;
@@ -17,7 +18,10 @@ function AppProvider({ children }: AppProviderProps) {
   );
 
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <Notifications />
+      {children}
+    </QueryClientProvider>
   );
 }
 

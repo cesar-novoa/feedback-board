@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
 import { create } from "zustand";
 
-type Notification = {
+type NotificationType = {
   id: string;
   type: "info" | "warning" | "success" | "error";
   title: string;
@@ -9,9 +9,9 @@ type Notification = {
 };
 
 type NotificationStore = {
-  notifications: Notification[];
-  addNotification: (notification: Omit<Notification, "id">) => void;
-  dismissNotification: (id: Notification["id"]) => void;
+  notifications: NotificationType[];
+  addNotification: (notification: Omit<NotificationType, "id">) => void;
+  dismissNotification: (id: NotificationType["id"]) => void;
 };
 
 const useNotifications = create<NotificationStore>((set) => ({
@@ -31,4 +31,4 @@ const useNotifications = create<NotificationStore>((set) => ({
     })),
 }));
 
-export { type Notification, type NotificationStore, useNotifications };
+export { type NotificationType, type NotificationStore, useNotifications };
