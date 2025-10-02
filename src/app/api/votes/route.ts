@@ -3,15 +3,15 @@ import { prisma } from "@/lib/db";
 import { Prisma } from "@prisma/client";
 
 export async function POST(req: Request) {
-  const { postId, fingerprint } = await req.json();
-  if (!postId || !fingerprint)
+  const { feedbackId, fingerprint } = await req.json();
+  if (!feedbackId || !fingerprint)
     return NextResponse.json({ error: "Bad request" }, { status: 400 });
 
   try {
     await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
-      await tx.vote.create({ data: { postId, fingerprint } });
-      await tx.post.update({
-        where: { id: postId },
+      await tx.vote.create({ data: { feedbackId, fingerprint } });
+      await tx.feedback.update({
+        where: { id: feedbackId },
         data: { votes: { increment: 1 } },
       });
     });

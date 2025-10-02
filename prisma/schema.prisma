@@ -23,6 +23,6 @@ model Vote {
   fingerprint  String
   createdAt    DateTime @default(now())
 
-  @@unique([feedBackId, fingerprint])
-  @@index([feedBackId])
+  @@unique([feedbackId, fingerprint])
+  @@index([feedbackId])
 }
