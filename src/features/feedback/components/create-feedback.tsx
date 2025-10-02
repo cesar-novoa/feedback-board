@@ -17,7 +17,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Button } from "@/components/ui/button";
 import { createFeedbackSchema } from "@/features/feedback/utils/create-feedback-schema";
-import { useNotifications } from "@/components/ui/notification/notifications-store";
 import { createFeedback } from "@/features/feedback/api/create-feedback";
 
 export default function CreateFeedbackForm() {
