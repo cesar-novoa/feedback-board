@@ -8,6 +8,7 @@ const QueryConfig = {
   },
 } satisfies DefaultOptions;
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 type QueryConfigType<T extends (...args: any[]) => any> = Omit<
   ReturnType<T>,
   "queryKey" | "queryFn"
