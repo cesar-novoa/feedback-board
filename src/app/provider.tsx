@@ -2,7 +2,7 @@
 import React from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import { queryConfig } from "@/lib/react-query";
+import { QueryConfig } from "@/lib/react-query";
 import { Notifications } from "@/components/ui/notification";
 
 type AppProviderProps = {
@@ -13,7 +13,7 @@ function AppProvider({ children }: AppProviderProps) {
   const [queryClient] = React.useState(
     () =>
       new QueryClient({
-        defaultOptions: queryConfig,
+        defaultOptions: QueryConfig,
       })
   );
 

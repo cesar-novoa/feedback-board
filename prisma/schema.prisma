@@ -8,20 +8,20 @@ datasource db {
 }
 
 model Feedback {
-  id            String   @id @default(cuid())
-  title         String
-  description   String?
-  category      String   @default("general")
-  status        String   @default("open") // open|planned|in-progress|done
-  votes         Int      @default(0)
-  createdAt     DateTime @default(now())
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  category    String   @default("general")
+  status      String   @default("open") // open|planned|in-progress|done
+  votes       Int      @default(0)
+  createdAt   DateTime @default(now())
 }
 
 model Vote {
-  id           String   @id @default(cuid())
-  feedbackId       String
-  fingerprint  String
-  createdAt    DateTime @default(now())
+  id          String   @id @default(cuid())
+  feedbackId  String
+  fingerprint String
+  createdAt   DateTime @default(now())
 
   @@unique([feedbackId, fingerprint])
   @@index([feedbackId])
